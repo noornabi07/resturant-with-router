@@ -14,6 +14,7 @@ import Welcom from './components/Welcom/Welcom';
 import Login from './components/Login/Login';
 import Countries from './components/Countries/Countries';
 import Foods from './components/Foods/Foods';
+import MeaDetail from './components/MealDetail/MeaDetail';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         path: 'foods',
         element: <Foods></Foods>,
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+      },
+      {
+        path: 'food/:foodId',
+        element: <MeaDetail></MeaDetail>,
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.foodId}`)
       },
       {
         path: 'contact',
