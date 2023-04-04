@@ -7,8 +7,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Home from './components/Home/Home';
-import Service from './components/Service/Service';
+import Contact from './components/Contact/Contact';
+import Welcom from './components/Welcom/Welcom';
+import Login from './components/Login/Login';
+import Countries from './components/Countries/Countries';
+import Foods from './components/Foods/Foods';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +21,26 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     children: [
       {
+        path: 'home',
+        element: <Welcom></Welcom>
+      },
+      {
+        path: 'country',
+        element: <Countries></Countries>,
+        loader: () => fetch('https://restcountries.com/v3.1/all')
+      },
+      {
+        path: 'foods',
+        element: <Foods></Foods>,
+        loader: () => fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
+      },
+      {
         path: 'contact',
-        element: <div>this is contact page</div>
+        element: <Contact></Contact>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
       }
     ]
   },
