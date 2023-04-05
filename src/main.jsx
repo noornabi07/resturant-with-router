@@ -15,6 +15,7 @@ import Login from './components/Login/Login';
 import Countries from './components/Countries/Countries';
 import Foods from './components/Foods/Foods';
 import MeaDetail from './components/MealDetail/MeaDetail';
+import Error from './components/Error/Error';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: '*',
+        element: <Error></Error>
       }
     ]
   },
