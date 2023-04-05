@@ -5,8 +5,8 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Navbar = () => {
     return (
-        <div className='text-center bg-slate-900 text-white py-5 flex items-center justify-between px-20'>
-            <img src={img} alt="" />
+        <div className='text-center bg-slate-900 text-white py-5 md:flex items-center justify-between md:px-20'>
+            <img className='mx-auto' src={img} alt="" />
             <div>
                 <ActiveLink className='px-8 text-2xl font-semibold' to="/home">Home</ActiveLink>
                 <ActiveLink className='px-8 text-2xl font-semibold' to="/country">Country</ActiveLink>
